@@ -15,7 +15,7 @@ import com.felipe.demo.exceptions.UnsupportedMathOperationException;
 
 @RestController
 @ControllerAdvice
-public class CustomizedResponseEntityExceptionHandler  {
+public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 	
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ExceptionResponse> handleAllExceptions(Exception ex, WebRequest request ){
@@ -28,7 +28,7 @@ public class CustomizedResponseEntityExceptionHandler  {
 	}
 	
 	@ExceptionHandler(UnsupportedMathOperationException.class)
-	public final ResponseEntity<ExceptionResponse> handleAllEcptions(Exception ex, WebRequest request ){
+	public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception ex, WebRequest request ){
 		
 		ExceptionResponse exceptionResponse = new ExceptionResponse( 
 				new Date(), 
