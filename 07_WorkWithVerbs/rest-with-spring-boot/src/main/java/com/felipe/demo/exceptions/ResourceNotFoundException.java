@@ -3,10 +3,10 @@ package com.felipe.demo.exceptions;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 
-@ResponseStatus(HttpStatus.BAD_REQUEST)
-public class UnsupportedMathOperationException extends RuntimeException {
+@ResponseStatus(HttpStatus.NOT_FOUND)
+public class ResourceNotFoundException extends RuntimeException {
 
-	public UnsupportedMathOperationException(String ex) {
+	public ResourceNotFoundException(String ex) {
 		super(ex);
 	}
 
